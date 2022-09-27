@@ -8,5 +8,5 @@ CASE
     WHEN s.name_song LIKE '%SUPERSTAR%' THEN REPLACE(s.name_song, 'SUPERSTAR', 'SUPERDEV')
 END AS novo_nome
 FROM SpotifyClone.song s
-ORDER BY novo_nome DESC
-LIMIT 5;
+HAVING novo_nome <> nome_musica
+ORDER BY novo_nome DESC;
